@@ -7,21 +7,49 @@
   <meta name="description" content="郭缙的个人作品集：项目作品、技能方向与联系方式。">
   <meta name="theme-color" content="#f5f2ea">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <script>
+    // 在样式渲染前恢复上次选择的主题，避免深色用户看到闪烁
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body id="top">
 
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="#top">郭缙<em>·</em>作品集</a>
-      <nav class="site-nav" id="siteNav" aria-label="主导航">
-        <a href="#works" data-nav>作品</a>
-        <a href="#about" data-nav>关于</a>
-        <a href="#contact" data-nav>联系</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="切换菜单">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-right">
+        <nav class="site-nav" id="siteNav" aria-label="主导航">
+          <a href="#works" data-nav>作品</a>
+          <a href="#about" data-nav>关于</a>
+          <a href="#contact" data-nav>联系</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="切换深浅色主题" title="切换深浅色主题">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="切换菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -117,7 +145,7 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=3"></script>
-  <script src="js/main.js?v=3"></script>
+  <script src="js/data.js?v=4"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

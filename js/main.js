@@ -109,8 +109,40 @@
     items.forEach(function (el) { observer.observe(el); });
   }
 
+  /* ---------- 深浅色主题切换 + localStorage 记忆 ---------- */
+  function initTheme() {
+    var root = document.documentElement;
+    var toggle = document.getElementById("themeToggle");
+    var meta = document.querySelector('meta[name="theme-color"]');
+    var STORAGE_KEY = "theme";
+
+    function apply(theme) {
+      root.setAttribute("data-theme", theme);
+      if (toggle) {
+        toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+      // 同步移动端浏览器地址栏颜色
+      if (meta) {
+        meta.setAttribute("content", theme === "dark" ? "#14130e" : "#f5f2ea");
+      }
+    }
+
+    // 页面加载时恢复上次选择（head 中的内联脚本已提前设置，这里同步按钮状态）
+    var saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    apply(saved === "dark" ? "dark" : "light");
+
+    if (!toggle) return;
+    toggle.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      apply(next);
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+    });
+  }
+
   renderWorks();
   initNav();
   initActiveNav();
   initReveal();
+  initTheme();
 })();

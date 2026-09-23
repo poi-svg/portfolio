@@ -14,12 +14,26 @@
   --line: #d9d3c4;
   --accent: #e8491d;
   --dark: #16150f;
+  --header-bg: rgba(245, 242, 234, 0.92);
 
   --serif: Georgia, "Times New Roman", "Songti SC", "STSong", SimSun, serif;
   --sans: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 
   --header-h: 64px;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- 深色主题：夜刊版配色 ---------- */
+html[data-theme="dark"] {
+  --bg: #14130e;
+  --bg-deep: #1d1b13;
+  --ink: #f0ebde;
+  --ink-mid: #c8c2b2;
+  --ink-soft: #9a9384;
+  --line: #3a362b;
+  --accent: #ff5c2e;
+  --dark: #0b0a06;
+  --header-bg: rgba(20, 19, 14, 0.92);
 }
 
 /* ---------- 基础 ---------- */
@@ -36,6 +50,7 @@ body {
   color: var(--ink);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 img { display: block; max-width: 100%; }
@@ -108,10 +123,11 @@ button:focus-visible {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  background: rgba(245, 242, 234, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--ink);
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
 .header-inner {
@@ -132,6 +148,38 @@ button:focus-visible {
   font-style: normal;
   color: var(--accent);
 }
+
+/* 导航右侧操作区：导航链接 + 主题按钮 + 移动端汉堡 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 主题切换按钮：与整体风格一致的细边框方块 */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  color: var(--ink);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* 浅色显示月亮（点击去深色），深色显示太阳 */
+.theme-toggle .icon-sun { display: none; }
+
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 
 .site-nav a {
   position: relative;
@@ -493,6 +541,7 @@ button:focus-visible {
 .about {
   background: var(--bg-deep);
   padding: clamp(5rem, 12vh, 8rem) 0;
+  transition: background-color 0.3s var(--ease);
 }
 
 .about-grid {
@@ -626,6 +675,7 @@ button:focus-visible {
   background: var(--dark);
   color: #cfc9bc;
   padding: 2.25rem 0;
+  transition: background-color 0.3s var(--ease);
 }
 
 .footer-inner {
