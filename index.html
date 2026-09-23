@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郭缙 · 个人作品集</title>
+  <meta name="description" content="郭缙的个人作品集：项目作品、技能方向与联系方式。">
+  <meta name="theme-color" content="#f5f2ea">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body id="top">
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top">郭缙<em>·</em>作品集</a>
+      <nav class="site-nav" id="siteNav" aria-label="主导航">
+        <a href="#works" data-nav>作品</a>
+        <a href="#about" data-nav>关于</a>
+        <a href="#contact" data-nav>联系</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="切换菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 首屏：杂志封面式 -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="hero-issue"><span class="square"></span>PORTFOLIO · VOL.01 — 2026</p>
+        <h1 class="hero-title">
+          <span class="line">你好，我是郭缙，</span>
+          <span class="line">软件工程在读，关注<span class="outline">AI 辅助开发</span>与大语言模型技术。</span>
+        </h1>
+        <p class="hero-lead">
+          软件工程专业学生，平时主要使用 Python、Java 和 TypeScript 进行项目开发，也在持续学习前后端开发、数据可视化和 AI 应用构建。这里收录了我的个人介绍与项目经历。
+        </p>
+        <div class="hero-meta">
+          <div><span>坐标</span>广州 · 中国</div>
+          <div><span>方向</span>AI 辅助开发 / 大语言模型应用</div>
+          <div><span>状态</span>广州软件学院 · 在读</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作品：编辑排版式项目区 -->
+    <section id="works" class="works">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-label">Selected Works</span>
+          <h2 class="section-title">精选项目 <span class="count" id="projectCount"></span></h2>
+          <p class="section-desc">每个项目都是一个独立的版面：图与文、疏与密，按内容本身安排节奏。</p>
+        </header>
+        <div class="works-list" id="worksList">
+          <!-- 项目由 js/main.js 依据 js/data.js 渲染 -->
+        </div>
+        <noscript><p class="noscript-tip">项目列表需要启用 JavaScript 才能显示。</p></noscript>
+      </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title">关于我</h2>
+            <p class="lede">我是郭缙，软件工程专业在读学生，目前主要关注 AI 辅助开发与大语言模型技术。</p>
+            <p>平时我主要使用 Python、Java 和 TypeScript 进行项目开发，也在持续学习前后端开发、数据可视化和 AI 应用构建，尝试把这些技术用进实际的项目里。</p>
+          </div>
+          <aside class="about-side reveal">
+            <h3 class="side-title">技能方向</h3>
+            <ol class="skill-list">
+              <li>
+                <span class="skill-index">01</span>
+                <div><strong>AI 辅助开发 · 大语言模型</strong><p>当前主要关注的技术方向，并持续学习 AI 应用构建。</p></div>
+              </li>
+              <li>
+                <span class="skill-index">02</span>
+                <div><strong>Python · Java</strong><p>日常项目开发中使用的主要编程语言。</p></div>
+              </li>
+              <li>
+                <span class="skill-index">03</span>
+                <div><strong>TypeScript · HTML/CSS</strong><p>项目开发中常用的前端技术。</p></div>
+              </li>
+              <li>
+                <span class="skill-index">04</span>
+                <div><strong>持续学习中</strong><p>前后端开发 · 数据可视化 · AI 应用构建。</p></div>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系 -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <span class="section-label">Contact</span>
+        <h2 class="contact-title reveal">有想法？<br><em>一起聊聊。</em></h2>
+        <a class="contact-mail" href="mailto:hello@guojin.dev">hello@guojin.dev</a>
+        <ul class="contact-links">
+          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="#contact">微信：guojin-dev</a></li>
+          <li><a href="#contact">下载简历 ↗</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 郭缙 · 用原生 HTML / CSS / JS 构建</p>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/data.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+</body>
+</html>

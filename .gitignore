@@ -1,0 +1,15 @@
+# 系统临时文件
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 编辑器/IDE 临时文件
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+
+# 本地环境配置
+.env
